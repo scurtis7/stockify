@@ -5,7 +5,7 @@ This application will allow you to follow and research stocks.  I use the
 [Finnhub API](https://finnhub.io/docs/api/#) to get stock information.
 
 ## Version 0.0.1
-This is the initial version with all of the three main pieces (Spring Boot, Angular9 & Postgresql) working together.
+This is the initial version with the two main pieces (Spring Boot & Angular11) working together.
 Not much functionality yet just the initial shell of the application.
 
 ## Technologies
