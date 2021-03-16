@@ -20,7 +20,7 @@ import reactor.core.publisher.Mono;
 @RequiredArgsConstructor
 public class FinnhubService {
 
-    @Value("finnhub.token")
+    @Value("${finnhub.token}")
     private String token;
 
     private final WebClient finnhubWebClient;
