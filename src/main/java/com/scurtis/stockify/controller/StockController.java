@@ -1,6 +1,8 @@
 package com.scurtis.stockify.controller;
 
-import com.scurtis.stockify.model.Quote;
+import com.scurtis.stockify.model.AVQuote;
+import com.scurtis.stockify.model.FHQuote;
+import com.scurtis.stockify.service.AlphaVantageService;
 import com.scurtis.stockify.service.FinnhubService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,10 +19,16 @@ import reactor.core.publisher.Mono;
 public class StockController {
 
     private final FinnhubService finnhubService;
+    private final AlphaVantageService alphaVantageService;
 
-    @GetMapping("/quote/{symbol}")
-    public Mono<Quote> getQuote(@PathVariable String symbol) {
+    @GetMapping("/fh/quote/{symbol}")
+    public Mono<FHQuote> getFinnhubQuote(@PathVariable String symbol) {
         return finnhubService.getQuote(symbol);
+    }
+
+    @GetMapping("/av/quote/{symbol}")
+    public Mono<AVQuote> getAlphaVantageQuote(@PathVariable String symbol) {
+        return alphaVantageService.getQuote(symbol);
     }
 
 

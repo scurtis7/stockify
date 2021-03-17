@@ -5,11 +5,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Quote {
+public class FHQuote {
+
+    @JsonProperty("o")
+    private Double open;
 
     @JsonProperty("c")
     private Double close;
@@ -19,9 +21,6 @@ public class Quote {
 
     @JsonProperty("l")
     private Double low;
-
-    @JsonProperty("o")
-    private Double open;
 
     @JsonProperty("pc")
     private Double previousClose;

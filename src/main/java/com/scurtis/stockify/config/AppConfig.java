@@ -17,5 +17,12 @@ public class AppConfig {
                 .build();
     }
 
+    @Bean
+    public WebClient alphavantageWebClient() {
+        return WebClient.builder()
+                .baseUrl("https://www.alphavantage.co")
+                .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
+                .build();
+    }
 
 }
