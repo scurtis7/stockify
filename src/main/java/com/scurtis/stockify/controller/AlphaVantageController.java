@@ -20,8 +20,8 @@ public class AlphaVantageController {
 
     @GetMapping("/quote/{symbol}")
     public Mono<AVQuote> getAlphaVantageQuote(@PathVariable String symbol) {
+        log.info("Called endpoint: /api/av/quote/" + symbol);
         return alphaVantageService.getQuote(symbol);
     }
-
 
 }

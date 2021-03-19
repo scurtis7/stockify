@@ -20,6 +20,7 @@ public class FinnhubController {
 
     @GetMapping("/quote/{symbol}")
     public Mono<FHQuote> getFinnhubQuote(@PathVariable String symbol) {
+        log.info("Called endpoint: /api/fh/quote/" + symbol);
         return finnhubService.getQuote(symbol);
     }
 
